@@ -46,7 +46,7 @@ function performGathering() {
     if (gatheringResponse.status === 200) {
         gatheringResponse.json().then((data) => {
             console.log('Your character successfully gathered the resource.');
-            cooldown = data.data.cooldown.totalSeconds;
+            cooldown = data.data.cooldown.total_seconds;
             setTimeout(performGathering, cooldown * 1000);
       });
 
