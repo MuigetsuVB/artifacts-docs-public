@@ -38,7 +38,7 @@ def perform_gathering() -> int:
         print("Your character successfully gathered the ressource.")
 
         #Return the cooldown in seconds
-        return data["cooldown"]["totalSeconds"]
+        return data["cooldown"]["total_seconds"]
 
 #Loop
 while True:
