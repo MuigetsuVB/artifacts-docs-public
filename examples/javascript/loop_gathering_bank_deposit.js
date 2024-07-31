@@ -43,7 +43,7 @@ function performGathering() {
       state = "gathering";
       gatheringResponse.json().then((data) => {
         console.log("Your character has successfully gathering the resource.");
-        cooldown = data.data.cooldown.totalSeconds;
+        cooldown = data.data.cooldown.total_seconds;
         setTimeout(loop, cooldown * 1000); // Wait for cooldown to end
       });
     } else {
@@ -65,7 +65,7 @@ function moveTo(mx, my) {
     if (moveResponse.status === 200) {
       moveResponse.json().then((data) => {
         console.log("Successful move.");
-        setTimeout(loop, data.data.cooldown.totalSeconds * 1000); // Wait for cooldown to end
+        setTimeout(loop, data.data.cooldown.total_seconds * 1000); // Wait for cooldown to end
       });
     } else {
       console.log("Error when moving.");
